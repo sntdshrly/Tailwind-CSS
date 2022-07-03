@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <title>Tailwind CSS</title>
+
+    <!-- CDN Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Script buatan sendiri extend itu untuk menambahkan aturan baru -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    spacing: {
+                        13: '3.25rem',
+                    },
+                    fontFamily: {
+                        caveat: ['Caveat'],
+                    },
+                    colors: {
+                        kopi: '#c0ffee'
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <section class="mb-96 font-caveat max-w-3xl mx-auto bg-yellow-200">
+        <h2 class="mb-4 text-4xl font-bold bg-gradient-to-r from-blue-900 to-teal-400 bg-clip-text text-transparent">Belajar Typography</h2>
+        <div class="mb-4 text-lg text-red-700">By Sherly Santiadi, 3 Juli 2022</div>
+        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. <a href="#"
+                class="underline font-semibold text-blue-600">Quibusdam</a> a ipsa consequuntur
+            nulla ea labore explicabo iste perspiciatis dolores. Excepturi quo, architecto ex, a dolores neque possimus
+            deserunt nulla dolorum earum distinctio commodi quae? Nesciunt unde soluta vero totam! Explicabo laboriosam
+            voluptas, sint sequi voluptatem hic officia obcaecati in!
+        </p>
+        <blockquote class="mb-4 italic font-thin bg-kopi">
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi perferendis voluptates autem, unde
+            dolores hic eos ratione incidunt dicta ipsam?""
+        </blockquote>
+        <p class="mb-4 bg-gradient-to-r from-indigo-300 to-red-500">Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Ea at alias quae voluptates, dolore
+            porro fugit similique et sit quis, minus praesentium repellat? Tenetur impedit, suscipit maxime illo soluta
+            atque?</p>
+        <p class="mb-4 bg-gradient-to-r from-indigo-300 via-red-200 to-red-500">Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Ea at alias quae voluptates, dolore
+            porro fugit similique et sit quis, minus praesentium repellat? Tenetur impedit, suscipit maxime illo soluta
+            atque?</p>
+    </section>
+</body>
+
+</html>
