@@ -35,8 +35,9 @@
 </head>
 
 <body>
-    <section class="mb-96 font-caveat max-w-3xl mx-auto bg-yellow-200">
-        <h2 class="mb-4 text-4xl font-bold bg-gradient-to-r from-blue-900 to-teal-400 bg-clip-text text-transparent">Belajar Typography</h2>
+    <section class="mb-10 font-caveat max-w-3xl mx-auto bg-yellow-200">
+        <h2 class="mb-4 text-4xl font-bold bg-gradient-to-r from-blue-900 to-teal-400 bg-clip-text text-transparent">
+            Belajar Typography</h2>
         <div class="mb-4 text-lg text-red-700">By Sherly Santiadi, 3 Juli 2022</div>
         <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. <a href="#"
                 class="underline font-semibold text-blue-600">Quibusdam</a> a ipsa consequuntur
@@ -52,11 +53,94 @@
             elit. Ea at alias quae voluptates, dolore
             porro fugit similique et sit quis, minus praesentium repellat? Tenetur impedit, suscipit maxime illo soluta
             atque?</p>
-        <p class="mb-4 bg-gradient-to-r from-indigo-300 via-red-200 to-red-500">Lorem ipsum dolor sit amet, consectetur adipisicing
+        <p class="mb-4 bg-gradient-to-r from-indigo-300 via-red-200 to-red-500">Lorem ipsum dolor sit amet, consectetur
+            adipisicing
             elit. Ea at alias quae voluptates, dolore
             porro fugit similique et sit quis, minus praesentium repellat? Tenetur impedit, suscipit maxime illo soluta
             atque?</p>
     </section>
+
+    <!-- arbitary value dengan menggunakan [..] -->
+    <!-- bg-local -> tulisan sama gambarnya nempel 
+        bg-fixed -> nempel sama scroll yg di luar gambar
+    -->
+
+    <div class="max-w-xl h-96 bg-[#bada55] mx-auto mt-[42px] overflow-y-scroll bg-scroll"
+        style="background-image: url('https://source.unsplash.com/1000x600?aesthetic');">
+        <p class="p-5 text-2xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium nisi hic
+            repudiandae, corporis placeat dolorem, eaque, sed quibusdam id veritatis est aspernatur rerum laboriosam
+            voluptatibus sit? Labore cum odio dolorum officiis quibusdam minima quos accusamus voluptate consectetur
+            veritatis aliquid reprehenderit necessitatibus deleniti exercitationem consequatur delectus, quae hic,
+            aspernatur consequuntur rem in amet totam nulla dolor? Ex similique eveniet quaerat perspiciatis aliquid.
+            Nam unde maxime optio atque omnis deleniti obcaecati, voluptate velit ratione illum odio hic assumenda
+            maiores. Velit odit suscipit sunt enim ducimus, nulla atque beatae, mollitia libero facilis repellendus ea
+            commodi quidem laborum iure minus eveniet delectus aperiam error quam temporibus minima. Reprehenderit
+            officia porro modi earum excepturi nihil a praesentium, eligendi ex eum necessitatibus voluptatem mollitia
+            tempore? Eligendi quisquam dolores consequuntur, impedit accusamus quos cumque minima aut quod, sit ullam
+            alias libero id natus tempora. Numquam pariatur deserunt voluptates natus expedita. Obcaecati vitae maiores
+            nihil quo quisquam enim quaerat porro? Nesciunt, dignissimos? Quibusdam cumque alias tempora quae provident
+            quis incidunt nesciunt ut ab, repellendus veniam? Placeat praesentium repudiandae ut nostrum. Earum
+            recusandae ipsum dolorum, unde laborum explicabo consequatur blanditiis culpa sequi, molestias tenetur, sit
+            saepe iusto suscipit officia facere minima dicta. Asperiores error odit distinctio esse modi incidunt!</p>
+    </div>
+
+    <div class="mt-32 max-w-xl mx-auto h-96 bg-slate-200 bg-contain bg-no-repeat bg-center rounded-xl border-8 border-slate-900 shadow-xl shadow-black overflow-hidden"
+        style="background-image: url(./img/1.jpg)">
+        <div class="w-full h-full bg-amber-600 mix-blend-darken"></div>
+    </div>
+
+    <div class="mt-32 max-w-xl mx-auto h-96 bg-slate-200 bg-contain bg-no-repeat bg-center rounded-xl border-8 border-slate-900 shadow-xl shadow-black opacity-25"
+        style="background-image: url(./img/1.jpg)"></div>
+
+    <div class="mt-32 max-w-xl mx-auto h-96 bg-slate-200 bg-contain bg-no-repeat bg-center rounded-xl border-8 border-slate-900 shadow-xl shadow-black overflow-hidden bg-blend-multiply"
+        style="background-image: url(./img/1.jpg)">
+    </div>
+
+    <button
+        class="my-10 bg-sky-500 px-5 py-2 rounded-full text-white font-bold mx-auto block hover:bg-sky-700 active:bg-sky-900">Simpan</button>
+
+    <!-- grouping styling based on parent -> grup dihover maka childnya akan berubah sesuai dengan group-hover: .. -->
+
+    <div
+        class="font-serif max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md hover:bg-green-500 group">
+
+        <h5 class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white">My Card</h5>
+
+        <!-- selection itu buat highliter -->
+        <p
+            class="text-slate-600 group-hover:text-white selection:bg-yellow-500 selection:text-black first-letter:text-4xl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, consequatur sit excepturi dolor ullam
+            quos culpa ut cum repellendus, neque maiores unde ab commodi possimus vero illo dolorem ad?</p>
+    </div>
+
+    <!-- grouping styling based on parent -> grup dihover maka childnya akan berubah sesuai dengan group-hover: .. -->
+
+    <div
+        class="font-serif max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md hover:bg-green-500 group">
+
+        <h5 class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white">My Card</h5>
+
+        <!-- selection itu buat highliter -->
+        <p
+            class="text-slate-600 group-hover:text-white selection:bg-yellow-500 selection:text-black first-letter:text-4xl first-letter:float-left first-letter:mr-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nam, consequatur sit excepturi dolor ullam
+            quos culpa ut cum repellendus, neque maiores unde ab commodi possimus vero illo dolorem ad?</p>
+    </div>
+
+    <div class="max-w-lg border border-slate-200 rounded-xl mx-auto shadow-md font-serif p-5">
+        <form action="">
+            <!-- for di label pasangkan dg id di input -->
+            <label for="email">
+                <span class="block font-semibold mb-1 text-slate-600 after:content-['*'] after:text-red-700 after:ml-0.5">Email</span>
+                <input type="email" id="email" placeholder="masukan email.."
+                    class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-800 focus:border-sky-800" />
+            </label>
+        </form>
+    </div>
+
+    <div class="mb-96"></div>
+
+
 </body>
 
 </html>
