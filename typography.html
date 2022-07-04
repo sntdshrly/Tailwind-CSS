@@ -17,6 +17,7 @@
     <!-- Script buatan sendiri extend itu untuk menambahkan aturan baru -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     spacing: {
@@ -32,9 +33,15 @@
             },
         };
     </script>
+<!-- style untuk cursor light/dark -->
+<style type="text/tailwindcss">
+    #toggle:checked ~ label div.toggle-circle {
+        @apply translate-x-3;
+    }
+</style>
 </head>
 
-<body>
+<body class="dark:bg-slate-600 dark:text-slate-200">
     <section class="mb-10 font-caveat max-w-3xl mx-auto bg-yellow-200">
         <h2 class="mb-4 text-4xl font-bold bg-gradient-to-r from-blue-900 to-teal-400 bg-clip-text text-transparent">
             Belajar Typography</h2>
@@ -96,6 +103,23 @@
         style="background-image: url(./img/1.jpg)">
     </div>
 
+    <hr class="my-20" />
+
+    <div class="flex justify-center">
+        <span class="text-sm text-slate-500 mr-2">
+            Light
+        </span>
+        <input type="checkbox" id="toggle" class="hidden" />
+        <label for="toggle">
+            <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+                <div class="w-4 h-4 bg-white rounded-full toggle-circle "></div>
+            </div>
+        </label>
+        <span class="text-sm text-slate-500 ml-2">
+            Dark
+        </span>
+    </div>
+
     <button
         class="my-10 bg-sky-500 px-5 py-2 rounded-full text-white font-bold mx-auto block hover:bg-sky-700 active:bg-sky-900">Simpan</button>
 
@@ -131,15 +155,37 @@
         <form action="">
             <!-- for di label pasangkan dg id di input -->
             <label for="email">
-                <span class="block font-semibold mb-1 text-slate-600 after:content-['*'] after:text-red-700 after:ml-0.5">Email</span>
-                <input type="email" id="email" placeholder="masukan email.."
-                    class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-800 focus:border-sky-800" />
+                <span
+                    class="block font-semibold mb-1 text-slate-600 after:content-['*'] after:text-red-700 after:ml-0.5">Email</span>
+                <input type="email" id="email" placeholder="masukan email.." class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-800 focus:border-sky-800
+                    invalid:text-red-700
+                    invalid:focus:ring-red-700
+                    peer
+                    " />
+                <!-- peer untuk tag rekan (bukan parent) -->
+                <p class="text-sm m-1 text-red-700 invisible peer-invalid:visible">Invalid email</p>
             </label>
         </form>
     </div>
 
     <div class="mb-96"></div>
 
+<!-- script buat tombol dark mode -->
+<script>
+    // cari elemen yg nama id nya toggle
+    const checkbox = document.querySelector('#toggle');
+
+    // cari elemen yg namanya html
+    const html = document.querySelector('html');
+
+    // kalau checkbox kita klik, jalankan fungsi berikut ini
+    checkbox.addEventListener('click', function() {
+        // tipe checked ? boolean -> kalau udah diklik add class list dark, kalau ga remove class list dark
+
+        checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+    })
+
+</script>
 
 </body>
 
