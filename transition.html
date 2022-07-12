@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <title>Tailwind CSS</title>
+
+    <!-- CDN Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Script buatan sendiri extend itu untuk menambahkan aturan baru -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'spin-slow': 'spin 3s linear infinite',
+                        'animasi-goyang': 'goyang 1s ease-in-out infinite'
+                    },
+                    keyframes:{
+                        goyang: {
+                            '0%, 100%' : { transform: 'rotate(-3deg)' },
+                            '50%': {transform: 'rotate(3deg)'}
+                        },
+                    }
+                },
+            },
+        };
+    </script>
+
+<style type="text/tailwindcss">
+</style>
+</head>
+
+<body>
+<!-- sumbu putar di tengah" -->
+<hr class="my-20"/>
+<div class="w-40 h-40 bg-sky-500 mx-auto rounded-lg shadow-lg hover:scale-125 hover:rotate-45 hover:translate-x-16 hover:bg-pink-500 transition"></div>
+
+<!-- sumbu putar di top-left patah" -->
+<div class="my-20 w-40 h-40 bg-sky-500 mx-auto rounded-lg shadow-lg hover:scale-125 hover:rotate-45 origin-top-left hover:bg-pink-500 transition"></div>
+
+<!-- dipakein grouping supaya kalau kita hovernya ga tepat ga akan patah2 soalnya yg dihover groupingnya -->
+<div class="w-40 h-40 mx-auto mt-20 group">
+    <div class="w-full h-full bg-sky-500 rounded-lg shadow-lg group-hover:rotate-180 origin-top-left transition duration-1000 ease-linear"></div>
+</div>
+
+<!-- animation -->
+<div class="mt-20 w-40 h-40 bg-pink-800 mx-auto rounded-lg shadow-lg animate-spin"></div>
+
+<!-- pake extend yg dimodifikasi -->
+<div class="mt-20 w-40 h-40 bg-pink-800 mx-auto rounded-lg shadow-lg animate-spin-slow"></div>
+
+<!-- pake animasi buatan sendiri -->
+<div class="mt-20 w-40 h-40 bg-pink-800 mx-auto rounded-lg shadow-lg animate-animasi-goyang"></div>
+
+<div class="mt-20 w-40 h-40 bg-pink-800 mx-auto rounded-full shadow-lg animate-ping"></div>
+
+<div class="mt-20 w-40 h-40 bg-pink-800 mx-auto rounded-full shadow-lg animate-pulse"></div>
+
+<div class="mt-20 w-40 h-40 bg-pink-800 mx-auto rounded-full shadow-lg animate-bounce"></div>
+
+<script>
+</script>
+
+</body>
+
+</html>
